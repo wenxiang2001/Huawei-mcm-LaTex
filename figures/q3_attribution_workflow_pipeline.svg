@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="840px" height="720px" viewBox="0 0 840 720" version="1.1">
+  <defs>
+    <!-- Arrowhead markers -->
+    <marker id="wf-arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#334155"/>
+    </marker>
+    <marker id="wf-arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#1D4ED8"/>
+    </marker>
+    <marker id="wf-arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#D97706"/>
+    </marker>
+    <marker id="wf-arr-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#15803D"/>
+    </marker>
+    <marker id="wf-arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#DC2626"/>
+    </marker>
+  </defs>
+
+  <style>
+    .font-pill { font-family: 'PingFang SC', 'Source Han Sans CN', 'SimHei', sans-serif; font-weight: bold; font-size: 15px; fill: #FFFFFF; }
+    .font-card-title { font-family: 'PingFang SC', 'Source Han Sans CN', 'SimHei', sans-serif; font-weight: bold; font-size: 14px; fill: #0F172A; }
+    .font-card-body { font-family: 'PingFang SC', 'Source Han Sans CN', 'Microsoft YaHei', sans-serif; font-size: 13px; fill: #1E293B; }
+    .font-math { font-family: 'Times New Roman', Times, serif; font-style: italic; font-weight: bold; font-size: 13.5px; }
+    .font-math-large { font-family: 'Times New Roman', Times, serif; font-style: italic; font-weight: bold; font-size: 15.5px; }
+  </style>
+
+  <!-- Clean Pure White Background -->
+  <rect x="0" y="0" width="840" height="720" fill="#FFFFFF"/>
+
+  <!-- ============================================================== -->
+  <!-- STAGE 1: MULTIMODAL INPUTS & OBJECTIVE MASK AUDIT              -->
+  <!-- ============================================================== -->
+  <g id="stage-1">
+    <!-- Outer Grouping Frame (Dashed) -->
+    <rect x="15" y="14" width="810" height="135" rx="8" fill="none" stroke="#000000" stroke-width="1.6" stroke-dasharray="6,4"/>
+    
+    <!-- Stage Header Pill -->
+    <rect x="30" y="4" width="340" height="26" rx="13" fill="#1E3A8A" stroke="#172554" stroke-width="1.2"/>
+    <text x="200" y="22" text-anchor="middle" class="font-pill">阶段一：多源异构输入与客观掩码对齐层</text>
+
+    <!-- 4 Input Cards in Row 1 -->
+    <!-- Text Card -->
+    <rect x="25" y="36" width="185" height="44" rx="6" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.4"/>
+    <text x="117" y="54" text-anchor="middle" class="font-card-title" fill="#1E40AF">文本特征 X_T</text>
+    <text x="117" y="71" text-anchor="middle" class="font-math" fill="#1E3A8A">BERT 词元 (50×768)</text>
+
+    <!-- Audio Card -->
+    <rect x="220" y="36" width="185" height="44" rx="6" fill="#F0FDF4" stroke="#16A34A" stroke-width="1.4"/>
+    <text x="312" y="54" text-anchor="middle" class="font-card-title" fill="#166534">声学物理 X_A</text>
+    <text x="312" y="71" text-anchor="middle" class="font-math" fill="#14532D">COVAREP 物理包 (50×74)</text>
+
+    <!-- Vision Card -->
+    <rect x="415" y="36" width="185" height="44" rx="6" fill="#FAF5FF" stroke="#9333EA" stroke-width="1.4"/>
+    <text x="507" y="54" text-anchor="middle" class="font-card-title" fill="#6B21A8">面部动作 X_V</text>
+    <text x="507" y="71" text-anchor="middle" class="font-math" fill="#581C87">CMU 肌肉单元 (50×35)</text>
+
+    <!-- Video Duration Card -->
+    <rect x="610" y="36" width="200" height="44" rx="6" fill="#FFFBEB" stroke="#D97706" stroke-width="1.4"/>
+    <text x="710" y="54" text-anchor="middle" class="font-card-title" fill="#92400E">视频实测物理时长</text>
+    <text x="710" y="71" text-anchor="middle" class="font-card-body" font-weight="bold" fill="#78350F">ffprobe 实测 20 样本</text>
+
+    <!-- Row 2: Mask Audit & Decision -->
+    <!-- Mask Formula Card -->
+    <rect x="25" y="88" width="280" height="46" rx="6" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.4"/>
+    <text x="165" y="106" text-anchor="middle" class="font-card-title" fill="#0369A1">客观有效掩码判定式</text>
+    <text x="165" y="124" text-anchor="middle" class="font-math" font-size="12.5px" fill="#0284C7">mask_m^eff[t] = mask_m[t] · 𝕀(‖x_m[t]‖₁ &gt; 0)</text>
+
+    <!-- Decision Arrow -->
+    <path d="M 305 111 L 335 111" stroke="#334155" stroke-width="1.6" marker-end="url(#wf-arr-slate)" fill="none"/>
+
+    <!-- Condition Diamond -->
+    <polygon points="385,93 435,111 385,129 335,111" fill="#FEF3C7" stroke="#D97706" stroke-width="1.6"/>
+    <text x="385" y="116" text-anchor="middle" class="font-card-title" font-size="13px" fill="#92400E">‖X_V‖₁ &gt; 0 ?</text>
+
+    <!-- No Branch (to Sample 13 Guardrail) -->
+    <path d="M 435 111 L 465 111" stroke="#DC2626" stroke-width="1.8" marker-end="url(#wf-arr-red)" fill="none"/>
+    <text x="450" y="104" text-anchor="middle" font-size="11.5px" font-weight="bold" fill="#DC2626">否</text>
+
+    <!-- Guardrail Card -->
+    <rect x="470" y="88" width="340" height="46" rx="6" fill="#FEF2F2" stroke="#EF4444" stroke-width="1.6"/>
+    <text x="640" y="106" text-anchor="middle" class="font-card-title" fill="#991B1B">【Sample 13 零模态防伪闭锁护栏】</text>
+    <text x="640" y="124" text-anchor="middle" class="font-card-body" font-weight="bold" fill="#B91C1C">强制锁定：w_V ≡ 0, ϕ_V ≡ 0, TE ≡ 0 (诚实交付 None)</text>
+
+    <!-- Yes Branch (Down to Stage 2) -->
+    <path d="M 385 129 L 385 158" stroke="#16A34A" stroke-width="2" marker-end="url(#wf-arr-green)" fill="none"/>
+    <text x="410" y="148" class="font-card-title" font-size="12.5px" fill="#15803D">是 (有效)</text>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- STAGE 2: DEEP INTERACTION & EVIDENTIAL LEARNING                -->
+  <!-- ============================================================== -->
+  <g id="stage-2">
+    <!-- Outer Grouping Frame (Dashed) -->
+    <rect x="15" y="162" width="810" height="98" rx="8" fill="none" stroke="#000000" stroke-width="1.6" stroke-dasharray="6,4"/>
+    
+    <!-- Stage Header Pill -->
+    <rect x="30" y="152" width="340" height="26" rx="13" fill="#0D9488" stroke="#115E59" stroke-width="1.2"/>
+    <text x="200" y="170" text-anchor="middle" class="font-pill">阶段二：跨模态中介交互网络与证据学习</text>
+
+    <!-- Mediator Block -->
+    <rect x="25" y="186" width="365" height="62" rx="6" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.4"/>
+    <text x="207" y="206" text-anchor="middle" class="font-card-title" fill="#115E59">跨模态注意力中介层与面部直通路</text>
+    <text x="207" y="224" text-anchor="middle" class="font-card-body">中介融合变量：<tspan class="font-math">M = f_M(X_V, X_T, X_A)</tspan></text>
+    <text x="207" y="240" text-anchor="middle" class="font-card-body" fill="#0F766E">面部微表情独立直通路：<tspan class="font-math">X_V → Y</tspan></text>
+
+    <!-- Arrow between Mediator and EDL -->
+    <path d="M 390 217 L 420 217" stroke="#0D9488" stroke-width="1.8" marker-end="url(#wf-arr-slate)" fill="none"/>
+
+    <!-- EDL Head Block -->
+    <rect x="425" y="186" width="385" height="62" rx="6" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.4"/>
+    <text x="617" y="206" text-anchor="middle" class="font-card-title" fill="#115E59">高阶正态-逆伽马证据输出头 (EDL NIG Head)</text>
+    <text x="617" y="224" text-anchor="middle" class="font-card-body">预测情感强度均值：<tspan class="font-math">ŷ = γ</tspan> (连续极性指标)</text>
+    <text x="617" y="240" text-anchor="middle" class="font-card-body" fill="#B45309">量化认知空缺度 (Epistemic)：<tspan class="font-math">u = 1 / (β - 1)</tspan></text>
+  </g>
+
+  <!-- Flow Split to Dual Tracks -->
+  <path d="M 280 260 L 210 285" stroke="#1E3A8A" stroke-width="1.8" marker-end="url(#wf-arr-blue)" fill="none"/>
+  <path d="M 560 260 L 630 285" stroke="#D97706" stroke-width="1.8" marker-end="url(#wf-arr-amber)" fill="none"/>
+
+  <!-- ============================================================== -->
+  <!-- STAGE 3: DUAL-TRACK ATTRIBUTION DISPATCHER                     -->
+  <!-- ============================================================== -->
+  <g id="stage-3">
+    <!-- Track 1: Pearl SCM (Left Panel) -->
+    <rect x="15" y="290" width="395" height="175" rx="8" fill="none" stroke="#000000" stroke-width="1.6" stroke-dasharray="6,4"/>
+    
+    <!-- Track 1 Header Pill -->
+    <rect x="30" y="280" width="260" height="26" rx="13" fill="#1E40AF" stroke="#1E3A8A" stroke-width="1.2"/>
+    <text x="160" y="298" text-anchor="middle" class="font-pill">【轨一】Pearl 结构因果中介解耦</text>
+
+    <!-- SCM Card 1: 3-State -->
+    <rect x="25" y="312" width="375" height="42" rx="6" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.3"/>
+    <text x="212" y="330" text-anchor="middle" class="font-card-title" fill="#1E3A8A">潜在推断三态构建与图切断</text>
+    <text x="212" y="346" text-anchor="middle" class="font-math" font-size="12px" fill="#1D4ED8">事实态 Y(v, M(v)) ｜ 基准态 Y(0, M(0)) ｜ 反事实 Y(v, M(0))</text>
+
+    <!-- SCM Card 2: Identity Theorem -->
+    <rect x="25" y="358" width="375" height="46" rx="6" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="1.6"/>
+    <text x="212" y="377" text-anchor="middle" class="font-math-large" fill="#1E3A8A">TE(v, v*) ≡ NDE(v, v*) + NIE(v, v*)</text>
+    <text x="212" y="395" text-anchor="middle" class="font-card-body" font-weight="bold" fill="#1E40AF">代数恒等律 (残差 &lt; 10⁻⁷) ｜ 中介传导比 PM = NIE / TE</text>
+
+    <!-- SCM Card 3: Monotonicity -->
+    <rect x="25" y="408" width="375" height="42" rx="6" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.3"/>
+    <text x="212" y="426" text-anchor="middle" class="font-card-title" fill="#1E3A8A">流形切空间原型反事实干预验证</text>
+    <text x="212" y="442" text-anchor="middle" class="font-card-body" fill="#1E40AF">提炼正负面部原型 (距 2.33)，极性单调保真率 100% (19/19)</text>
+
+    <!-- Track 2: Cooperative Game Theory (Right Panel) -->
+    <rect x="430" y="290" width="395" height="175" rx="8" fill="none" stroke="#000000" stroke-width="1.6" stroke-dasharray="6,4"/>
+    
+    <!-- Track 2 Header Pill -->
+    <rect x="445" y="280" width="260" height="26" rx="13" fill="#B45309" stroke="#92400E" stroke-width="1.2"/>
+    <text x="575" y="298" text-anchor="middle" class="font-pill">【轨二】公理化合作博弈与冲突诊断</text>
+
+    <!-- Game Card 1: 8 Subsets -->
+    <rect x="440" y="312" width="375" height="42" rx="6" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1.3"/>
+    <text x="627" y="330" text-anchor="middle" class="font-card-title" fill="#92400E">模态全子集结盟遍历 (2³ = 8 种前向状态)</text>
+    <text x="627" y="346" text-anchor="middle" class="font-card-body" fill="#B45309">严格满足有效性、对称性、虚拟人与单调性四项公理</text>
+
+    <!-- Game Card 2: Shapley Values -->
+    <rect x="440" y="358" width="375" height="46" rx="6" fill="#FEF3C7" stroke="#D97706" stroke-width="1.6"/>
+    <text x="627" y="377" text-anchor="middle" class="font-card-title" fill="#78350F">一阶 Shapley 边际贡献分配与全集均值</text>
+    <text x="627" y="395" text-anchor="middle" class="font-card-body" font-weight="bold" fill="#92400E">文本主导 55% ｜ 视觉主导 40% (反讽拉动) ｜ 声学辅助 5%</text>
+
+    <!-- Game Card 3: Grabisch-Roubens & CMCI (Clean Width) -->
+    <rect x="440" y="408" width="375" height="42" rx="6" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1.3"/>
+    <text x="627" y="426" text-anchor="middle" class="font-card-title" fill="#92400E">Grabisch-Roubens 二阶交互指数与 CMCI</text>
+    <text x="627" y="442" text-anchor="middle" class="font-card-body" fill="#B45309">Φ_ij &gt; 0 协同增益 ｜ Φ_ij &lt; 0 反讽冲突 ｜ CMCI 撕裂度诊断</text>
+  </g>
+
+  <!-- Dual Track Convergence Arrows to Aggregation Ellipse -->
+  <path d="M 212 465 C 212 485, 330 488, 360 495" stroke="#1D4ED8" stroke-width="1.8" marker-end="url(#wf-arr-green)" fill="none"/>
+  <path d="M 627 465 C 627 485, 510 488, 480 495" stroke="#D97706" stroke-width="1.8" marker-end="url(#wf-arr-green)" fill="none"/>
+
+  <!-- ============================================================== -->
+  <!-- CENTER AGGREGATION ELLIPSE (Inspired by User Reference 3)       -->
+  <!-- ============================================================== -->
+  <g id="aggregation-hub">
+    <ellipse cx="420" cy="505" rx="190" ry="24" fill="#15803D" stroke="#166534" stroke-width="1.8"/>
+    <text x="420" y="512" text-anchor="middle" class="font-pill" font-size="15.5px">双轨数理决策归因融合与互证 (Aggregation)</text>
+  </g>
+
+  <!-- Flow Down from Aggregation to Stage 4 -->
+  <path d="M 420 529 L 420 548" stroke="#15803D" stroke-width="2" marker-end="url(#wf-arr-green)" fill="none"/>
+
+  <!-- ============================================================== -->
+  <!-- STAGE 4: PHYSICAL GROUNDING & CLOSED-LOOP VERIFICATION         -->
+  <!-- ============================================================== -->
+  <g id="stage-4">
+    <!-- Outer Grouping Frame (Dashed) -->
+    <rect x="15" y="550" width="810" height="155" rx="8" fill="none" stroke="#000000" stroke-width="1.6" stroke-dasharray="6,4"/>
+    
+    <!-- Stage Header Pill -->
+    <rect x="30" y="540" width="340" height="26" rx="13" fill="#15803D" stroke="#14532D" stroke-width="1.2"/>
+    <text x="200" y="558" text-anchor="middle" class="font-pill">阶段四：细粒度时空物理溯源与闭环验证交付</text>
+
+    <!-- 4 Grounding Cards in Row 1 -->
+    <!-- Text Grounding -->
+    <rect x="25" y="574" width="185" height="66" rx="6" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.4"/>
+    <text x="117" y="595" text-anchor="middle" class="font-card-title" fill="#15803D">文本物理词位溯源</text>
+    <text x="117" y="614" text-anchor="middle" class="font-card-body">逆向映射原句 Token</text>
+    <text x="117" y="631" text-anchor="middle" class="font-card-body" font-weight="bold" fill="#166534">高亮 Top-3 核心情感词</text>
+
+    <!-- Audio Grounding -->
+    <rect x="220" y="574" width="190" height="66" rx="6" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.4"/>
+    <text x="315" y="595" text-anchor="middle" class="font-card-title" fill="#15803D">声学物理参考回看</text>
+    <text x="315" y="614" text-anchor="middle" class="font-card-body">真实时长 [T_c±0.5s] 回看</text>
+    <text x="315" y="631" text-anchor="middle" class="font-card-body" font-weight="bold" fill="#166534">提取基频 F₀ 均值 (Hz)</text>
+
+    <!-- Vision Grounding -->
+    <rect x="420" y="574" width="190" height="66" rx="6" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.4"/>
+    <text x="515" y="595" text-anchor="middle" class="font-card-title" fill="#15803D">面部肌肉微表情溯源</text>
+    <text x="515" y="614" text-anchor="middle" class="font-card-body">35 维动作激活绝对值排序</text>
+    <text x="515" y="631" text-anchor="middle" class="font-card-body" font-weight="bold" fill="#166534">锚定 Top-3 显著肌肉维</text>
+
+    <!-- Verification Card -->
+    <rect x="620" y="574" width="195" height="66" rx="6" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.4"/>
+    <text x="717" y="595" text-anchor="middle" class="font-card-title" fill="#15803D">AOPC 忠实度闭环检验</text>
+    <text x="717" y="614" text-anchor="middle" class="font-card-body">扰动下降 Δ_diff &gt; 0</text>
+    <text x="717" y="631" text-anchor="middle" class="font-card-body" font-weight="bold" fill="#166534">20/20 样本全正向通过</text>
+
+    <!-- Final Deliverable Ribbon / Banner -->
+    <rect x="100" y="654" width="640" height="38" rx="19" fill="#14532D" stroke="#052E16" stroke-width="1.4"/>
+    <text x="420" y="678" text-anchor="middle" class="font-pill" font-size="15px">最终成果：导出 20 份全要素多模态全景解释大卡与因果归因全集大表</text>
+  </g>
+
+</svg>

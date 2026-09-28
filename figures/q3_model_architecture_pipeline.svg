@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1600px" height="1195px" viewBox="0 0 1600 1195" version="1.1">
+  <defs>
+    <!-- Filters for subtle modern drop shadow -->
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="112%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.08"/>
+    </filter>
+    <filter id="pill-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+
+    <!-- Gradients -->
+    <linearGradient id="header-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+
+    <linearGradient id="stage1-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+
+    <linearGradient id="stage2-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F0F9FF"/>
+      <stop offset="100%" stop-color="#E0F2FE"/>
+    </linearGradient>
+
+    <linearGradient id="scm-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FDF4FF"/>
+      <stop offset="100%" stop-color="#FAE8FF"/>
+    </linearGradient>
+
+    <linearGradient id="game-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBEB"/>
+      <stop offset="100%" stop-color="#FEF3C7"/>
+    </linearGradient>
+
+    <linearGradient id="stage4-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F0FDF4"/>
+      <stop offset="100%" stop-color="#DCFCE7"/>
+    </linearGradient>
+
+    <linearGradient id="guardrail-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF2F2"/>
+      <stop offset="100%" stop-color="#FEE2E2"/>
+    </linearGradient>
+
+    <!-- Markers for Arrows -->
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563EB"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#9333EA"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#D97706"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#16A34A"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#DC2626"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748B"/>
+    </marker>
+  </defs>
+
+  <style>
+    .title-cn { font-family: 'Songti SC', 'SimSun', 'STSong', serif; font-weight: bold; fill: #FFFFFF; font-size: 23px; letter-spacing: 0.5px; }
+    .title-en { font-family: 'Times New Roman', Times, serif; font-weight: bold; fill: #94A3B8; font-size: 13px; letter-spacing: 0.5px; }
+    .section-title { font-family: 'Songti SC', 'SimSun', 'STSong', serif; font-weight: bold; font-size: 14.5px; }
+    .box-title { font-family: 'Songti SC', 'SimSun', 'STSong', serif; font-weight: bold; font-size: 13.5px; }
+    .body-cn { font-family: 'Songti SC', 'SimSun', 'STSong', serif; font-size: 11.5px; fill: #334155; line-height: 1.5; }
+    .body-en { font-family: 'Times New Roman', Times, serif; font-size: 12.5px; fill: #1E293B; }
+    .math-text { font-family: 'Times New Roman', Times, serif; font-style: italic; font-weight: bold; }
+    .badge-text { font-family: 'Times New Roman', Times, serif; font-weight: bold; font-size: 11px; }
+    .badge-cn { font-family: 'Songti SC', 'SimSun', 'STSong', serif; font-weight: bold; font-size: 11px; }
+  </style>
+
+  <!-- Canvas Background -->
+  <rect x="0" y="0" width="1600" height="1195" fill="#FFFFFF"/>
+
+  <!-- ============================================================== -->
+  <!-- TOP BANNER                                                     -->
+  <!-- ============================================================== -->
+  <g id="top-banner">
+    <rect x="30" y="18" width="1540" height="76" rx="10" fill="url(#header-grad)" filter="url(#card-shadow)"/>
+    <text x="50" y="49" class="title-cn">问题三：基于结构因果中介模型与合作博弈论的多模态决策归因总体架构与推断流程图</text>
+    <text x="52" y="73" class="title-en">END-TO-END MULTIMODAL DECISION ATTRIBUTION PIPELINE: PEARL SCM CAUSAL MEDIATION &amp; COOPERATIVE GAME DUAL-TRACK FRAMEWORK</text>
+    
+    <!-- Top-Right Tags -->
+    <rect x="1190" y="32" width="105" height="24" rx="4" fill="#3B82F6"/>
+    <text x="1242" y="48" fill="#FFFFFF" text-anchor="middle" class="badge-cn">2026 华为杯</text>
+
+    <rect x="1305" y="32" width="115" height="24" rx="4" fill="#10B981"/>
+    <text x="1362" y="48" fill="#FFFFFF" text-anchor="middle" class="badge-cn">代数残差 &lt; 10⁻⁷</text>
+
+    <rect x="1430" y="32" width="120" height="24" rx="4" fill="#F59E0B"/>
+    <text x="1490" y="48" fill="#FFFFFF" text-anchor="middle" class="badge-cn">全量矢量 SVG 架构</text>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- STAGE 1: MULTIMODAL INPUTS & OBJECTIVE MASK ALIGNMENT GRID     -->
+  <!-- ============================================================== -->
+  <g id="stage-1">
+    <!-- Stage Outer Container -->
+    <rect x="30" y="106" width="1540" height="186" rx="10" fill="url(#stage1-bg)" stroke="#CBD5E1" stroke-width="1.5" filter="url(#card-shadow)"/>
+    
+    <!-- Stage Header Pill -->
+    <rect x="45" y="116" width="670" height="28" rx="6" fill="#1E293B" filter="url(#pill-shadow)"/>
+    <text x="58" y="135" fill="#FFFFFF" class="section-title">【阶段一】多源异构输入与客观有效掩码对齐层 (Heterogeneous Inputs &amp; Mask Alignment)</text>
+
+    <!-- Sub-Box 1.1: Text Modality -->
+    <rect x="45" y="154" width="310" height="126" rx="8" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.5"/>
+    <rect x="45" y="154" width="310" height="26" rx="8" fill="#EFF6FF"/>
+    <circle cx="62" cy="167" r="5" fill="#3B82F6"/>
+    <text x="74" y="171" fill="#1E40AF" class="box-title">文本语言模态序列 (Text Token Sequence)</text>
+    <text x="58" y="196" class="body-cn">• 特征张量：<tspan class="math-text">X_T ∈ ℝ^(50 × 768)</tspan>（BERT 词元嵌入）</text>
+    <text x="58" y="216" class="body-cn">• 时序对齐：固定 50 槽位离散映射，捕捉高阶情感语义</text>
+    <text x="58" y="236" class="body-cn">• 认知角色：主导极端情感极性表达（样本9贡献90.9%）</text>
+    <text x="58" y="256" class="body-cn">• 防伪约束：严格过滤 <tspan class="body-en">[CLS], [SEP]</tspan> 与高频虚词标点</text>
+
+    <!-- Sub-Box 1.2: Audio Modality -->
+    <rect x="375" y="154" width="310" height="126" rx="8" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.5"/>
+    <rect x="375" y="154" width="310" height="26" rx="8" fill="#F0FDFA"/>
+    <circle cx="392" cy="167" r="5" fill="#0D9488"/>
+    <text x="404" y="171" fill="#115E59" class="box-title">声学物理特征矩阵 (Audio Acoustic Features)</text>
+    <text x="388" y="196" class="body-cn">• 特征张量：<tspan class="math-text">X_A ∈ ℝ^(50 × 74)</tspan>（COVAREP 提取）</text>
+    <text x="388" y="216" class="body-cn">• 物理指标：提取基频 <tspan class="math-text">F_0</tspan>（Hz）、音强能量、HNR 谐噪比</text>
+    <text x="388" y="236" class="body-cn">• 时间映射：依据真实时长映射至回看窗口 <tspan class="body-en">[T_c±0.5s]</tspan></text>
+    <text x="388" y="256" class="body-cn">• 严正声明：客观物理声学回看，不冒充毫秒 CTC 对齐</text>
+
+    <!-- Sub-Box 1.3: Vision Modality -->
+    <rect x="705" y="154" width="310" height="126" rx="8" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5"/>
+    <rect x="705" y="154" width="310" height="26" rx="8" fill="#F5F3FF"/>
+    <circle cx="722" cy="167" r="5" fill="#8B5CF6"/>
+    <text x="734" y="171" fill="#5B21B6" class="box-title">面部视觉动作特征 (Facial AU Features)</text>
+    <text x="718" y="196" class="body-cn">• 特征张量：<tspan class="math-text">X_V ∈ ℝ^(50 × 35)</tspan>（CMU 人脸动作单元）</text>
+    <text x="718" y="216" class="body-cn">• 生理表征：35 维人脸肌肉动作单元连续空间激活</text>
+    <text x="718" y="236" class="body-cn">• 时序映射：50 槽位等距采样 <tspan class="math-text">t_sec = t × T_dur / 50</tspan></text>
+    <text x="718" y="256" class="body-cn">• 认知角色：主导微表情辨识与图文反讽直接因果反转</text>
+
+    <!-- Sub-Box 1.4: Objective Validity Mask & Guardrail -->
+    <rect x="1035" y="154" width="520" height="126" rx="8" fill="url(#guardrail-grad)" stroke="#EF4444" stroke-width="1.8"/>
+    <rect x="1035" y="154" width="520" height="26" rx="8" fill="#FEE2E2"/>
+    <circle cx="1052" cy="167" r="5" fill="#EF4444"/>
+    <text x="1064" y="171" fill="#991B1B" class="box-title">【防伪护栏】客观数据有效掩码与 Sample 13 零模态防御</text>
+    <text x="1048" y="196" class="body-cn">• 数据驱动客观有效掩码定义式：<tspan class="math-text">mask_m^eff[t] = mask_m[t] · 𝕀( ‖x_m[t]‖₁ &gt; 0 )</tspan></text>
+    <text x="1048" y="216" class="body-cn">• <tspan style="font-weight:bold; fill:#B91C1C;">Sample 13 真实物理状态：</tspan>面部特征 50 步恒等于 0 (<tspan class="math-text">‖X_V‖₁ ≡ 0.0</tspan>)，全零无面部</text>
+    <text x="1048" y="236" class="body-cn">• <tspan style="font-weight:bold; fill:#B91C1C;">护栏强制闭锁响应：</tspan>门控 <tspan class="math-text">w_V ≡ 0.000</tspan>，贡献 <tspan class="math-text">ϕ_V ≡ 0.000</tspan>，因果效应 <tspan class="math-text">TE = NDE = NIE ≡ 0.000</tspan></text>
+    <text x="1048" y="256" class="body-cn">• <tspan style="font-weight:bold; fill:#B91C1C;">防伪自洽性：</tspan>彻底阻断 <tspan class="body-en">ffmpeg</tspan> 空画面抽帧与伪特征生成，诚实交付 <tspan class="body-en">"None (V=0)"</tspan></text>
+  </g>
+
+  <!-- Connectors: Stage 1 -> Stage 2 -->
+  <path d="M 200 280 L 200 310" stroke="#2563EB" stroke-width="2" marker-end="url(#arrow-blue)" fill="none"/>
+  <path d="M 530 280 L 530 310" stroke="#0D9488" stroke-width="2" marker-end="url(#arrow-blue)" fill="none"/>
+  <path d="M 860 280 L 860 310" stroke="#8B5CF6" stroke-width="2" marker-end="url(#arrow-purple)" fill="none"/>
+  <path d="M 1295 280 L 1295 310" stroke="#EF4444" stroke-width="2" marker-end="url(#arrow-red)" fill="none"/>
+
+  <!-- ============================================================== -->
+  <!-- STAGE 2: CROSS-MODAL MEDIATION & EVIDENTIAL LEARNING           -->
+  <!-- ============================================================== -->
+  <g id="stage-2">
+    <!-- Stage Outer Container -->
+    <rect x="30" y="316" width="1540" height="158" rx="10" fill="url(#stage2-bg)" stroke="#93C5FD" stroke-width="1.5" filter="url(#card-shadow)"/>
+    
+    <!-- Stage Header Pill -->
+    <rect x="45" y="326" width="670" height="28" rx="6" fill="#1E3A8A" filter="url(#pill-shadow)"/>
+    <text x="58" y="345" fill="#FFFFFF" class="section-title">【阶段二】跨模态中介交互网络与证据深度学习 (Cross-Modal Mediation &amp; EDL Head)</text>
+
+    <!-- Sub-Box 2.1: Cross-Modal Attention Mediation -->
+    <rect x="45" y="364" width="460" height="98" rx="8" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.5"/>
+    <text x="60" y="384" fill="#1E40AF" class="box-title">多头交叉注意力中介交互层 (Cross-Attention Mediator)</text>
+    <text x="60" y="405" class="body-cn">• 查询与键值映射：<tspan class="math-text">Q = W_Q · U</tspan>（语境 <tspan class="math-text">U={X_T, X_A}</tspan>），<tspan class="math-text">K, V = W · X_V</tspan>（视觉暴露）</text>
+    <text x="60" y="425" class="body-cn">• 隐空间中介方程：<tspan class="math-text">M = f_M(X_V, X_T, X_A; θ_M) ∈ ℝ^(50 × d_h)</tspan></text>
+    <text x="60" y="445" class="body-cn">• 因果物理内涵：视觉特征作为语境中介，对语言与声学语义进行跨模态重构</text>
+
+    <!-- Sub-Box 2.2: Direct Bypass Path -->
+    <rect x="525" y="364" width="440" height="98" rx="8" fill="#FFFFFF" stroke="#EC4899" stroke-width="1.5"/>
+    <text x="540" y="384" fill="#9D174D" class="box-title">面部视觉直接前向通路 (Direct Facial Bypass Path)</text>
+    <text x="540" y="405" class="body-cn">• 拓扑直通架构：<tspan class="math-text">X_V ───────────────────────────&gt; Y</tspan>（独立表征通道）</text>
+    <text x="540" y="425" class="body-cn">• 前向方程：<tspan class="math-text">Y = f_Y(X_V, M, U; θ_Y)</tspan>，同时接收直接输入与中介表征</text>
+    <text x="540" y="445" class="body-cn">• 因果物理内涵：独立面部生理微表情绕过语言直接触发情感极性判定</text>
+
+    <!-- Sub-Box 2.3: EDL NIG Head -->
+    <rect x="985" y="364" width="570" height="98" rx="8" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.5"/>
+    <text x="1000" y="384" fill="#0369A1" class="box-title">高阶正态-逆伽马证据预测输出头 (Evidential NIG Output Head)</text>
+    <text x="1000" y="405" class="body-cn">• 连续狄利克雷证据参数组：<tspan class="math-text">(γ, v, α, β)</tspan>，建模预测强度与认知不确定性</text>
+    <text x="1000" y="425" class="body-cn">• 连续情感强度预测输出：<tspan class="math-text">ŷ = γ ∈ [-3.0, +3.0]</tspan>（回归均值）</text>
+    <text x="1000" y="445" class="body-cn">• 认知空缺度不确定性：<tspan class="math-text">u = 1 / (β - 1) ∈ [0, 1]</tspan>（全集均值 0.554，高置信度收敛）</text>
+  </g>
+
+  <!-- Connectors: Stage 2 -> Stage 3 (Dual-Track Split) -->
+  <path d="M 400 474 L 400 496 L 380 496 L 380 516" stroke="#9333EA" stroke-width="2.2" marker-end="url(#arrow-purple)" fill="none"/>
+  <path d="M 1150 474 L 1150 496 L 1170 496 L 1170 516" stroke="#D97706" stroke-width="2.2" marker-end="url(#arrow-amber)" fill="none"/>
+
+  <!-- ============================================================== -->
+  <!-- STAGE 3: DUAL-TRACK CAUSAL & GAME ATTRIBUTION ENGINE           -->
+  <!-- ============================================================== -->
+  <g id="stage-3">
+    <!-- Track A: Pearl SCM Mediation Decomposition (Left Half) -->
+    <rect x="30" y="522" width="750" height="352" rx="10" fill="url(#scm-bg)" stroke="#D8B4FE" stroke-width="1.5" filter="url(#card-shadow)"/>
+    
+    <!-- Track A Header Pill -->
+    <rect x="45" y="532" width="530" height="28" rx="6" fill="#7E22CE" filter="url(#pill-shadow)"/>
+    <text x="58" y="551" fill="#FFFFFF" class="section-title">【轨一】Pearl 结构因果模型 (SCM) 潜在结果中介解耦引擎</text>
+
+    <!-- Sub-Box A1: Tri-State Potential Outcomes -->
+    <rect x="45" y="570" width="720" height="90" rx="8" fill="#FFFFFF" stroke="#9333EA" stroke-width="1.2"/>
+    <text x="60" y="590" fill="#6B21A8" class="box-title">潜在推断三态定义与计算图路径 (Potential Outcomes Tri-State)</text>
+    <text x="60" y="611" class="body-cn">• <tspan style="font-weight:bold; fill:#1E293B;">事实状态 (Factual)：</tspan><tspan class="math-text">Y(v, M(v)) = f_Y(v, f_M(v, u), u)</tspan> —— 完整多模态前向真实激活</text>
+    <text x="60" y="630" class="body-cn">• <tspan style="font-weight:bold; fill:#1E293B;">基准状态 (Baseline)：</tspan><tspan class="math-text">Y(v*, M(v*)) = f_Y(0, f_M(0, u), u)</tspan> —— 视觉置零 (<tspan class="math-text">v*=0</tspan>) 剥离面部贡献</text>
+    <text x="60" y="649" class="body-cn">• <tspan style="font-weight:bold; fill:#1E293B;">反事实中介态 (Counterfactual)：</tspan><tspan class="math-text">Y(v, M(v*)) = f_Y(v, f_M(0, u), u)</tspan> —— 保持直接通路，切断中介重构</text>
+
+    <!-- Sub-Box A2: Causal Effect Decomposition & Identity Theorem -->
+    <rect x="45" y="668" width="720" height="104" rx="8" fill="#FFFFFF" stroke="#A855F7" stroke-width="1.2"/>
+    <text x="60" y="688" fill="#6B21A8" class="box-title">因果效应代数闭环恒等分解定理 (Causal Effect Decomposition Theorem)</text>
+    <text x="60" y="708" class="body-cn">• 自然直接效应：<tspan class="math-text">NDE(v, v*) = Y(v, M(v*)) - Y(v*, M(v*))</tspan>（面部独立直接通路驱动）</text>
+    <text x="60" y="726" class="body-cn">• 自然间接效应：<tspan class="math-text">NIE(v, v*) = Y(v, M(v)) - Y(v, M(v*))</tspan>（跨模态语义重构中介传递）</text>
+    <text x="60" y="744" class="body-cn">• <tspan style="font-weight:bold; fill:#7E22CE;">中介效应恒等律：</tspan><tspan class="math-text" style="font-size:13px; fill:#7E22CE;">TE(v, v*) ≡ NDE(v, v*) + NIE(v, v*)</tspan>，附件4实测代数残差 <tspan class="math-text">&lt; 10⁻⁷</tspan></text>
+    <text x="60" y="762" class="body-cn">• 中介传导比例：<tspan class="math-text">PM = NIE / TE × 100%</tspan>（样本1达146.6%中介主导，样本2仅25.5%直接主导）</text>
+
+    <!-- Sub-Box A3: Counterfactual Facial Prototype Intervention -->
+    <rect x="45" y="780" width="720" height="84" rx="8" fill="#FFFFFF" stroke="#C084FC" stroke-width="1.2"/>
+    <text x="60" y="800" fill="#6B21A8" class="box-title">反事实面部原型极性干预验证 (Counterfactual Facial Intervention)</text>
+    <text x="60" y="820" class="body-cn">• 原型提炼：从训练集 58,199 有效人脸帧提取正向 <tspan class="math-text">p_pos</tspan> 与负向 <tspan class="math-text">p_neg</tspan> 原型（欧氏距离 2.33）</text>
+    <text x="60" y="838" class="body-cn">• 极性单调保真：除样本13零掩码防御外，19 条有效人脸样本全部严格满足 <tspan class="math-text">Y_pos &gt; Y_neg</tspan></text>
+    <text x="60" y="855" class="body-cn">• 极性响应差均值达 <tspan class="math-text">Δ_gap = +0.1654</tspan>，100% 闭环证实网络对人脸极性表征的单调敏感性</text>
+
+    <!-- Track B: Cooperative Game Attribution (Right Half) -->
+    <rect x="800" y="522" width="770" height="352" rx="10" fill="url(#game-bg)" stroke="#FDE68A" stroke-width="1.5" filter="url(#card-shadow)"/>
+    
+    <!-- Track B Header Pill -->
+    <rect x="815" y="532" width="530" height="28" rx="6" fill="#B45309" filter="url(#pill-shadow)"/>
+    <text x="828" y="551" fill="#FFFFFF" class="section-title">【轨二】公理化合作博弈分配 (Shapley &amp; Grabisch-Roubens 交互)</text>
+
+    <!-- Sub-Box B1: Coalition Utility -->
+    <rect x="815" y="570" width="740" height="90" rx="8" fill="#FFFFFF" stroke="#D97706" stroke-width="1.2"/>
+    <text x="830" y="590" fill="#92400E" class="box-title">模态联盟特征函数效用评估 (Coalition Characteristic Function)</text>
+    <text x="830" y="611" class="body-cn">• 局中人集合：<tspan class="math-text">𝓜 = {T, A, V}</tspan>，模态数目 <tspan class="math-text">|𝓜| = 3</tspan></text>
+    <text x="830" y="630" class="body-cn">• 幂集联盟前向推断：遍历 <tspan class="math-text">2^|𝓜| = 8</tspan> 种特征子集组合 <tspan class="math-text">S ⊆ 𝓜</tspan>，未激活模态施加零掩码</text>
+    <text x="830" y="649" class="body-cn">• 联盟效用定义：<tspan class="math-text">F(S) = f_Y(x_S, 0_(-S))</tspan>，精确测量不同感知线索组合下的模型情感响应</text>
+
+    <!-- Sub-Box B2: 1st-Order Shapley Values -->
+    <rect x="815" y="668" width="740" height="104" rx="8" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1.2"/>
+    <text x="830" y="688" fill="#92400E" class="box-title">一阶 Shapley 边际贡献分配 (1st-Order Shapley Value Attribution)</text>
+    <text x="830" y="708" class="body-cn">• 加权边际分配：<tspan class="math-text">ϕ_m = ∑_(S ⊆ 𝓜∖{m}) [|S|!(|𝓜|-|S|-1)! / |𝓜|!] · [F(S ∪ {m}) - F(S)]</tspan></text>
+    <text x="830" y="726" class="body-cn">• <tspan style="font-weight:bold; fill:#B45309;">严格满足四项公理：</tspan>有效性 (<tspan class="math-text">∑ ϕ_m = F(𝓜) - F(∅)</tspan>)、对称性、虚拟局中人与可加性</text>
+    <text x="830" y="744" class="body-cn">• 专项样本主导格局：文本主导 11 条 (55%)、视觉主导 8 条 (40%)、声学主导 1 条 (5%)</text>
+    <text x="830" y="762" class="body-cn">• 二维单纯形相图映射：在重心坐标系 <tspan class="math-text">Δ²</tspan> 中确立四大功能引力域，刻画模态能量分布</text>
+
+    <!-- Sub-Box B3: 2nd-Order Grabisch-Roubens Interaction & CMCI -->
+    <rect x="815" y="780" width="740" height="84" rx="8" fill="#FFFFFF" stroke="#FBBF24" stroke-width="1.2"/>
+    <text x="830" y="800" fill="#92400E" class="box-title">二阶 Grabisch-Roubens 交互指数与跨模态冲突指数 (CMCI)</text>
+    <text x="830" y="820" class="body-cn">• 二阶交互算子：<tspan class="math-text">Φ_ij = ½ Δ_ij F(∅) + ½ Δ_ij F({k})</tspan>，严格关于对角线对称 (<tspan class="math-text">Φ_ij ≡ Φ_ji</tspan>)</text>
+    <text x="830" y="838" class="body-cn">• 冲突准则：<tspan class="math-text">Φ_ij &gt; 0</tspan> 协同增益；<tspan class="math-text">Φ_ij &lt; 0</tspan> 反讽对抗（样本2中 <tspan class="math-text">Φ_TV = -0.521</tspan> 表征强烈图文冲突）</text>
+    <text x="830" y="855" class="body-cn">• 跨模态冲突指数：<tspan class="math-text">CMCI(x) = (1/|𝓜|) ∑ |F({m}) - F(𝓜)|</tspan>，量化感知线索撕裂张力</text>
+  </g>
+
+  <!-- Connectors: Stage 3 -> Stage 4 -->
+  <path d="M 400 874 L 400 902" stroke="#7E22CE" stroke-width="2" marker-end="url(#arrow-purple)" fill="none"/>
+  <path d="M 1200 874 L 1200 902" stroke="#B45309" stroke-width="2" marker-end="url(#arrow-amber)" fill="none"/>
+
+  <!-- ============================================================== -->
+  <!-- STAGE 4: PHYSICAL EVIDENCE GROUNDING & FIDELITY VERIFICATION   -->
+  <!-- ============================================================== -->
+  <g id="stage-4">
+    <!-- Stage Outer Container -->
+    <rect x="30" y="908" width="1540" height="240" rx="10" fill="url(#stage4-bg)" stroke="#86EFAC" stroke-width="1.5" filter="url(#card-shadow)"/>
+    
+    <!-- Stage Header Pill -->
+    <rect x="45" y="918" width="730" height="28" rx="6" fill="#15803D" filter="url(#pill-shadow)"/>
+    <text x="58" y="937" fill="#FFFFFF" class="section-title">【阶段四】细粒度时空物理证据溯源与决策自洽性闭环验证 (Physical Grounding &amp; Fidelity)</text>
+
+    <!-- Sub-Box 4.1: Text Grounding -->
+    <rect x="45" y="954" width="350" height="180" rx="8" fill="#FFFFFF" stroke="#16A34A" stroke-width="1.2"/>
+    <text x="60" y="974" fill="#14532D" class="box-title">文本语言物理词位逆向检索</text>
+    <text x="60" y="995" class="body-cn">• 逆向检索机制：将显著时序步逆向映射至原始句子真实单词位置</text>
+    <text x="60" y="1014" class="body-cn">• 虚词噪声过滤：剔除标点与通用词</text>
+    <text x="60" y="1033" class="body-cn">• 核心证据捕获：提取敏感度 Top-3 核心词汇</text>
+    <text x="60" y="1052" class="body-cn">• 实例佐证：</text>
+    <text x="70" y="1070" class="body-cn">- S02 反讽词：<tspan class="body-en" style="font-weight:bold; fill:#DC2626;">"misery"</tspan>（敏感度 -0.36）</text>
+    <text x="70" y="1088" class="body-cn">- S16 差评词：<tspan class="body-en" style="font-weight:bold; fill:#DC2626;">"terrible"</tspan>（敏感度 -0.48）</text>
+    <text x="70" y="1106" class="body-cn">- S17 赞美词：<tspan class="body-en" style="font-weight:bold; fill:#16A34A;">"simple", "good"</tspan>（+0.42）</text>
+
+    <!-- Sub-Box 4.2: Audio Grounding -->
+    <rect x="410" y="954" width="350" height="180" rx="8" fill="#FFFFFF" stroke="#0D9488" stroke-width="1.2"/>
+    <text x="425" y="974" fill="#115E59" class="box-title">声学物理物理回看参考对齐</text>
+    <text x="425" y="995" class="body-cn">• 真实物理时长：基于赛题原始视频通过 <tspan class="body-en">ffprobe</tspan> 实测提取 20 段精准秒数</text>
+    <text x="425" y="1014" class="body-cn">• 连续回看区间：映射至 <tspan class="body-en">[T_c-0.5s, T_c+0.5s]</tspan></text>
+    <text x="425" y="1033" class="body-cn">• 物理量提取：基频 <tspan class="math-text">F_0</tspan> 均值与语调起伏</text>
+    <text x="425" y="1052" class="body-cn">• 实例佐证：</text>
+    <text x="435" y="1070" class="body-cn">- S02：2.2-3.2s，低沉紧绷 <tspan class="math-text">F_0=123Hz</tspan></text>
+    <text x="435" y="1088" class="body-cn">- S09：3.8-4.8s，高亢激越 <tspan class="math-text">F_0=226Hz</tspan></text>
+    <text x="435" y="1106" class="body-cn">- S18：沉稳声调，音频贡献达 64.3%</text>
+
+    <!-- Sub-Box 4.3: Vision Grounding -->
+    <rect x="775" y="954" width="350" height="180" rx="8" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.2"/>
+    <text x="790" y="974" fill="#5B21B6" class="box-title">面部微表情动作单元物理溯源</text>
+    <text x="790" y="995" class="body-cn">• 肌肉动作激活：对 35 维人脸特征向量绝对值排序，提取 Top-3 核心肌肉维度</text>
+    <text x="790" y="1014" class="body-cn">• 离散时间秒数：<tspan class="math-text">t_sec = t × T_dur / 50</tspan></text>
+    <text x="790" y="1033" class="body-cn">• 关键帧还原：关联关键时间步微表情画面</text>
+    <text x="790" y="1052" class="body-cn">• 实例佐证：</text>
+    <text x="800" y="1070" class="body-cn">- S02：0.09s 检出 <tspan class="body-en">Dim32 (+5.59)</tspan> 嘴角下撇冷峻</text>
+    <text x="800" y="1088" class="body-cn">- S17：1.41s 检出真挚舒展微笑，协同正向</text>
+    <text x="800" y="1106" class="body-cn">- S13：全零输入触发护栏，输出 <tspan class="body-en">"None"</tspan></text>
+
+    <!-- Sub-Box 4.4: Fidelity Verification & Deliverables -->
+    <rect x="1140" y="954" width="415" height="180" rx="8" fill="#FFFFFF" stroke="#059669" stroke-width="1.5"/>
+    <text x="1155" y="974" fill="#065F46" class="box-title">决策忠实度扰动检验与综合成果交付</text>
+    <text x="1155" y="995" class="body-cn">• <tspan style="font-weight:bold; fill:#047857;">AOPC 扰动差值检验：</tspan><tspan class="math-text">AOPC_diff = Δ_top - Δ_bottom &gt; 0</tspan></text>
+    <text x="1155" y="1014" class="body-cn">• <tspan style="font-weight:bold; fill:#047857;">全集实测正响应率：</tspan><tspan style="font-weight:bold; fill:#15803D;">20/20（100% 正向通过）</tspan>，均值 +0.0880</text>
+    <text x="1155" y="1033" class="body-cn">• <tspan style="font-weight:bold; fill:#047857;">扰动敏感度比值：</tspan>核心 vs 背景比值均值达 <tspan style="font-weight:bold; fill:#15803D;">55.85×</tspan>（中位数 17.34×）</text>
+    <text x="1155" y="1052" class="body-cn">• <tspan style="font-weight:bold; fill:#1E293B;">全套出版级交付物清单：</tspan></text>
+    <text x="1165" y="1070" class="body-cn">① 20 份全要素多模态全景解释卡（图 4.10~4.13）</text>
+    <text x="1165" y="1088" class="body-cn">② 附件4 全量 20 样本 14 列全要素归因附表（附录 B）</text>
+    <text x="1165" y="1106" class="body-cn">③ SCM 因果流向、二阶热力图、三模态单纯形与雷达图</text>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- BOTTOM FOOTER NOTE                                             -->
+  <!-- ============================================================== -->
+  <g id="bottom-footer">
+    <text x="800" y="1170" text-anchor="middle" fill="#64748B" font-family="'Songti SC', 'SimSun', serif" font-size="12px">
+      * 注：本架构图严格遵循 Pearl 结构因果推断定理与公理化合作博弈论规范；全部矢量元素使用 SVG 格式渲染，数学公式严格满足代数闭环残差 &lt; 10⁻⁷。
+    </text>
+  </g>
+
+</svg>

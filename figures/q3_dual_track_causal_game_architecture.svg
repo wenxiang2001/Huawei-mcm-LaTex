@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="840px" height="705px" viewBox="0 0 840 705" version="1.1">
+  <defs>
+    <!-- Arrowhead markers -->
+    <marker id="dt-arr-slate" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#334155"/>
+    </marker>
+    <marker id="dt-arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#1D4ED8"/>
+    </marker>
+    <marker id="dt-arr-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#15803D"/>
+    </marker>
+    <marker id="dt-arr-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#D97706"/>
+    </marker>
+    <marker id="dt-arr-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 9 5 L 0 8.5 z" fill="#DC2626"/>
+    </marker>
+  </defs>
+
+  <style>
+    .font-panel-pill { font-family: 'PingFang SC', 'Source Han Sans CN', 'SimHei', sans-serif; font-weight: bold; font-size: 15px; fill: #FFFFFF; }
+    .font-section-title { font-family: 'PingFang SC', 'Source Han Sans CN', 'SimHei', sans-serif; font-weight: bold; font-size: 14.5px; fill: #0F172A; }
+    .font-node-title { font-family: 'PingFang SC', 'Source Han Sans CN', 'SimHei', sans-serif; font-weight: bold; font-size: 13.5px; fill: #0F172A; }
+    .font-node-body { font-family: 'PingFang SC', 'Source Han Sans CN', 'Microsoft YaHei', sans-serif; font-size: 12.5px; fill: #1E293B; }
+    .font-math { font-family: 'Times New Roman', Times, serif; font-style: italic; font-weight: bold; font-size: 13.5px; }
+    .font-math-large { font-family: 'Times New Roman', Times, serif; font-style: italic; font-weight: bold; font-size: 15.5px; }
+  </style>
+
+  <!-- Clean Pure White Background -->
+  <rect x="0" y="0" width="840" height="705" fill="#FFFFFF"/>
+
+  <!-- ============================================================== -->
+  <!-- LEFT COLUMN: PANEL (A) PEARL SCM CAUSAL MEDIATION              -->
+  <!-- ============================================================== -->
+  <g id="panel-a">
+    <!-- Outer Grouping Frame (Dashed) -->
+    <rect x="15" y="12" width="395" height="640" rx="8" fill="none" stroke="#000000" stroke-width="1.6" stroke-dasharray="6,4"/>
+    
+    <!-- Header Pill -->
+    <rect x="25" y="4" width="375" height="26" rx="13" fill="#1E3A8A" stroke="#172554" stroke-width="1.2"/>
+    <text x="212" y="22" text-anchor="middle" class="font-panel-pill">(a) Pearl 结构因果模型 (SCM) 有向中介解耦</text>
+
+    <!-- SECTION A.1: DAG -->
+    <text x="25" y="52" class="font-section-title" fill="#1E3A8A">1. 结构因果有向无环图 (Causal DAG 计算图)</text>
+    
+    <!-- Context Node U -->
+    <rect x="135" y="62" width="155" height="24" rx="12" fill="#F1F5F9" stroke="#64748B" stroke-width="1.2" stroke-dasharray="3,2"/>
+    <text x="212" y="78" text-anchor="middle" class="font-node-title" font-size="12px" fill="#475569">固定语境协变量 U (X_T, X_A)</text>
+
+    <!-- Context downward dashed arrows -->
+    <path d="M 175 86 L 105 104" stroke="#94A3B8" stroke-width="1.1" stroke-dasharray="2,2" marker-end="url(#dt-arr-slate)" fill="none"/>
+    <path d="M 212 86 L 212 102" stroke="#94A3B8" stroke-width="1.1" stroke-dasharray="2,2" marker-end="url(#dt-arr-slate)" fill="none"/>
+    <path d="M 250 86 L 320 104" stroke="#94A3B8" stroke-width="1.1" stroke-dasharray="2,2" marker-end="url(#dt-arr-slate)" fill="none"/>
+
+    <!-- Treatment Node X_V -->
+    <rect x="30" y="106" width="105" height="42" rx="6" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.5"/>
+    <text x="82" y="124" text-anchor="middle" class="font-node-title" fill="#1E3A8A">处理变量 X_V</text>
+    <text x="82" y="139" text-anchor="middle" class="font-node-body" font-size="11.5px" fill="#1D4ED8">面部动作表征</text>
+
+    <!-- Mediator Node M -->
+    <rect x="160" y="106" width="105" height="42" rx="6" fill="#F0FDF4" stroke="#16A34A" stroke-width="1.5"/>
+    <text x="212" y="124" text-anchor="middle" class="font-node-title" fill="#15803D">中介变量 M</text>
+    <text x="212" y="139" text-anchor="middle" class="font-node-body" font-size="11.5px" fill="#166534">跨模态注意力融合</text>
+
+    <!-- Outcome Node Y -->
+    <rect x="290" y="106" width="105" height="42" rx="6" fill="#FFFBEB" stroke="#D97706" stroke-width="1.5"/>
+    <text x="342" y="124" text-anchor="middle" class="font-node-title" fill="#92400E">结果变量 Y</text>
+    <text x="342" y="139" text-anchor="middle" class="font-node-body" font-size="11.5px" fill="#B45309">连续情感强度</text>
+
+    <!-- Horizontal arrows for indirect mediation -->
+    <path d="M 135 127 L 158 127" stroke="#16A34A" stroke-width="1.6" marker-end="url(#dt-arr-green)" fill="none"/>
+    <path d="M 265 127 L 288 127" stroke="#16A34A" stroke-width="1.6" marker-end="url(#dt-arr-green)" fill="none"/>
+    <text x="212" y="163" text-anchor="middle" class="font-node-body" font-size="12px" font-weight="bold" fill="#15803D">间接中介通路：X_V 参与重构语义 M 进而驱动 Y (NIE)</text>
+
+    <!-- Curved Direct Path Arrow (Underneath with generous clearance) -->
+    <path d="M 82 148 C 82 208, 342 208, 342 150" stroke="#DC2626" stroke-width="2" marker-end="url(#dt-arr-red)" fill="none"/>
+    <!-- Text shield -->
+    <rect x="110" y="180" width="205" height="22" rx="5" fill="#FEF2F2" stroke="#EF4444" stroke-width="1"/>
+    <text x="212" y="195" text-anchor="middle" class="font-node-body" font-size="12px" font-weight="bold" fill="#B91C1C">直接直通通路：自然直接效应 NDE</text>
+
+    <!-- Separator -->
+    <line x1="25" y1="212" x2="400" y2="212" stroke="#CBD5E1" stroke-width="1"/>
+
+    <!-- SECTION A.2: Potential Outcomes Tri-State -->
+    <text x="25" y="232" class="font-section-title" fill="#1E3A8A">2. 潜在推断三态定义与计算图切断</text>
+    
+    <!-- State 1: Factual -->
+    <rect x="25" y="242" width="375" height="44" rx="6" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.3"/>
+    <text x="36" y="260" class="font-node-title" fill="#1E40AF">① 事实态 (Factual)：<tspan class="font-math">Y(v, M(v)) = f_Y(v, f_M(v, u), u)</tspan></text>
+    <text x="36" y="277" class="font-node-body" font-size="11.5px" fill="#475569">完整现实激活：模型在真实多模态环境下的基准情感预测</text>
+
+    <!-- State 2: Baseline -->
+    <rect x="25" y="292" width="375" height="44" rx="6" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.3"/>
+    <text x="36" y="310" class="font-node-title" fill="#1E40AF">② 基准态 (Baseline)：<tspan class="font-math">Y(0, M(0)) = f_Y(0, f_M(0, u), u)</tspan></text>
+    <text x="36" y="327" class="font-node-body" font-size="11.5px" fill="#475569">视觉剥离：强制视觉输入置零，切断直通与中介通路</text>
+
+    <!-- State 3: Counterfactual -->
+    <rect x="25" y="342" width="375" height="44" rx="6" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.3"/>
+    <text x="36" y="360" class="font-node-title" fill="#1E40AF">③ 反事实态 (Counterfactual)：<tspan class="font-math">Y(v, M(0))</tspan></text>
+    <text x="36" y="377" class="font-node-body" font-size="11.5px" fill="#475569">面部直通保持真实，中介通路强制冻结为基准状态输出</text>
+
+    <!-- Separator -->
+    <line x1="25" y1="394" x2="400" y2="394" stroke="#CBD5E1" stroke-width="1"/>
+
+    <!-- SECTION A.3: Causal Identity Theorem -->
+    <text x="25" y="414" class="font-section-title" fill="#1E3A8A">3. 因果效应分解定理与代数恒等律</text>
+    <text x="25" y="433" class="font-node-body">• 直接效应：<tspan class="font-math">NDE(v, v*) = Y(v, M(0)) - Y(0, M(0))</tspan></text>
+    <text x="25" y="451" class="font-node-body">• 间接效应：<tspan class="font-math">NIE(v, v*) = Y(v, M(v)) - Y(v, M(0))</tspan></text>
+    
+    <!-- Prominent Formula Box -->
+    <rect x="25" y="461" width="375" height="42" rx="8" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="1.8"/>
+    <text x="212" y="488" text-anchor="middle" class="font-math-large" fill="#1E3A8A" font-size="16.5px">
+      TE(v, v*) ≡ NDE(v, v*) + NIE(v, v*)
+    </text>
+
+    <text x="25" y="521" class="font-node-body">• 中介传导比：<tspan class="font-math">PM = NIE / TE</tspan> ； 代数残差严格 <tspan class="font-math">&lt; 10⁻⁷</tspan></text>
+    <text x="25" y="538" class="font-node-body" font-size="11.5px" fill="#64748B">• 物理语义：量化面部是通过独立微表情触发还是语义重构间接影响</text>
+
+    <!-- Separator -->
+    <line x1="25" y1="548" x2="400" y2="548" stroke="#CBD5E1" stroke-width="1"/>
+
+    <!-- SECTION A.4: Prototype Intervention -->
+    <text x="25" y="568" class="font-section-title" fill="#1E3A8A">4. 反事实人脸原型干预单调保真验证</text>
+    <rect x="25" y="578" width="375" height="64" rx="6" fill="#FFFFFF" stroke="#3B82F6" stroke-width="1.3"/>
+    <text x="36" y="597" class="font-node-body">• 提取正负情感原型：<tspan class="font-math">p_pos</tspan> 与 <tspan class="font-math">p_neg</tspan> (欧氏距离 2.33)</text>
+    <text x="36" y="615" class="font-node-body">• 极性单调保真率：19 条有效样本 100% 保持单调递增响应</text>
+    <text x="36" y="632" class="font-node-body" font-size="11.5px" fill="#1E3A8A" font-weight="bold">• 潜空间响应差均值 Δ_gap = +0.1654，证实微表情高敏感度</text>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- RIGHT COLUMN: PANEL (B) COOPERATIVE GAME THEORY & CMCI         -->
+  <!-- ============================================================== -->
+  <g id="panel-b">
+    <!-- Outer Grouping Frame (Dashed) -->
+    <rect x="430" y="12" width="395" height="640" rx="8" fill="none" stroke="#000000" stroke-width="1.6" stroke-dasharray="6,4"/>
+    
+    <!-- Header Pill -->
+    <rect x="440" y="4" width="375" height="26" rx="13" fill="#B45309" stroke="#78350F" stroke-width="1.2"/>
+    <text x="627" y="22" text-anchor="middle" class="font-panel-pill">(b) 公理化合作博弈模态联盟与二阶交互分析</text>
+
+    <!-- SECTION B.1: Coalition Lattice -->
+    <text x="440" y="52" class="font-section-title" fill="#92400E">1. 模态全子集结盟格点 (2³ = 8 种前向状态)</text>
+    
+    <!-- Lattice Box Container -->
+    <rect x="440" y="60" width="375" height="135" rx="6" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1.3"/>
+    
+    <!-- Top Level: Grand Coalition {T, A, V} -->
+    <rect x="562" y="67" width="130" height="24" rx="12" fill="#D97706" stroke="#92400E" stroke-width="1.2"/>
+    <text x="627" y="83" text-anchor="middle" class="font-math" font-size="12px" fill="#FFFFFF">F({T, A, V}) = ŷ_fact</text>
+
+    <!-- Mid Level: Pairs -->
+    <rect x="455" y="105" width="95" height="22" rx="5" fill="#FEF3C7" stroke="#D97706" stroke-width="1.1"/>
+    <text x="502" y="120" text-anchor="middle" class="font-math" font-size="12px" fill="#92400E">F({T, A})</text>
+
+    <rect x="580" y="105" width="95" height="22" rx="5" fill="#FEF3C7" stroke="#D97706" stroke-width="1.1"/>
+    <text x="627" y="120" text-anchor="middle" class="font-math" font-size="12px" fill="#92400E">F({T, V})</text>
+
+    <rect x="705" y="105" width="95" height="22" rx="5" fill="#FEF3C7" stroke="#D97706" stroke-width="1.1"/>
+    <text x="752" y="120" text-anchor="middle" class="font-math" font-size="12px" fill="#92400E">F({A, V})</text>
+
+    <!-- Low Level: Singletons -->
+    <rect x="455" y="140" width="95" height="22" rx="5" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1.1"/>
+    <text x="502" y="155" text-anchor="middle" class="font-math" font-size="12px" fill="#B45309">F({T})</text>
+
+    <rect x="580" y="140" width="95" height="22" rx="5" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1.1"/>
+    <text x="627" y="155" text-anchor="middle" class="font-math" font-size="12px" fill="#B45309">F({A})</text>
+
+    <rect x="705" y="140" width="95" height="22" rx="5" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1.1"/>
+    <text x="752" y="155" text-anchor="middle" class="font-math" font-size="12px" fill="#B45309">F({V})</text>
+
+    <!-- Lattice Connecting Lines -->
+    <path d="M 600 91 L 520 105" stroke="#CBD5E1" stroke-width="1" fill="none"/>
+    <path d="M 627 91 L 627 105" stroke="#CBD5E1" stroke-width="1" fill="none"/>
+    <path d="M 655 91 L 735 105" stroke="#CBD5E1" stroke-width="1" fill="none"/>
+    <path d="M 502 127 L 502 140" stroke="#CBD5E1" stroke-width="1" fill="none"/>
+    <path d="M 627 127 L 627 140" stroke="#CBD5E1" stroke-width="1" fill="none"/>
+    <path d="M 752 127 L 752 140" stroke="#CBD5E1" stroke-width="1" fill="none"/>
+
+    <text x="627" y="183" text-anchor="middle" class="font-node-body" font-size="11.5px" fill="#92400E">全模态零基准：F(∅) ≡ 0 (满足有效性守恒 ∑ ϕ_m = F(M))</text>
+
+    <!-- Separator -->
+    <line x1="440" y1="212" x2="815" y2="212" stroke="#CBD5E1" stroke-width="1"/>
+
+    <!-- SECTION B.2: 1st-Order Shapley Values -->
+    <text x="440" y="232" class="font-section-title" fill="#92400E">2. 一阶 Shapley 边际贡献分配与公理化保证</text>
+    
+    <!-- Formula Card -->
+    <rect x="440" y="242" width="375" height="38" rx="6" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1.3"/>
+    <text x="627" y="266" text-anchor="middle" class="font-math" font-size="12px" fill="#78350F">
+      ϕ_m = ∑ [ |S|!(|M|-|S|-1)! / |M|! ] · [ F(S∪{m}) - F(S) ]
+    </text>
+
+    <text x="440" y="296" class="font-node-body">• 严格公理化性质：满足有效性、对称性、虚拟人与单调性</text>
+    <text x="440" y="315" class="font-node-body">• 全局能量分布：<tspan font-weight="bold" fill="#B45309">文本 55%</tspan> (骨架)，<tspan font-weight="bold" fill="#B45309">视觉 40%</tspan> (反讽)，<tspan font-weight="bold" fill="#B45309">音频 5%</tspan></text>
+    <text x="440" y="333" class="font-node-body" font-size="11.5px" fill="#64748B">• 物理本质：量化各模态在高维非线性响应曲面上的边际增益</text>
+
+    <!-- Separator -->
+    <line x1="440" y1="344" x2="815" y2="344" stroke="#CBD5E1" stroke-width="1"/>
+
+    <!-- SECTION B.3: 2nd-Order Grabisch-Roubens & CMCI (Refined Text) -->
+    <text x="440" y="364" class="font-section-title" fill="#92400E">3. Grabisch-Roubens 二阶交互与冲突诊断</text>
+    <text x="440" y="382" class="font-node-body">• 二阶交互算子：<tspan class="font-math">Φ_ij = ½ Δ_ij F(∅) + ½ Δ_ij F({k})</tspan> (严格对称)</text>
+    <text x="440" y="400" class="font-node-body">• 协同与冲突：<tspan font-weight="bold" fill="#15803D">Φ_ij &gt; 0 协同</tspan> ； <tspan font-weight="bold" fill="#DC2626">Φ_ij &lt; 0 反讽</tspan> (S02: Φ_TV = -0.521)</text>
+
+    <!-- CMCI Formula Card -->
+    <rect x="440" y="410" width="375" height="36" rx="6" fill="#FEF3C7" stroke="#D97706" stroke-width="1.6"/>
+    <text x="627" y="433" text-anchor="middle" class="font-math-large" font-size="14.5px" fill="#78350F">
+      CMCI(x) = (1/|M|) ∑ | F({m}) - F(M) |
+    </text>
+    
+    <text x="440" y="464" class="font-node-body">• 跨模态冲突指数：量化局部单模态与联合决策撕裂度</text>
+
+    <!-- Separator -->
+    <line x1="440" y1="475" x2="815" y2="475" stroke="#CBD5E1" stroke-width="1"/>
+
+    <!-- SECTION B.4: Methodological Synthesis (Refined Text) -->
+    <text x="440" y="495" class="font-section-title" fill="#92400E">4. 博弈无向曲面与因果有向中介之深层互证</text>
+    <rect x="440" y="505" width="375" height="137" rx="6" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1.3"/>
+    <text x="450" y="526" class="font-node-body">• <tspan font-weight="bold" fill="#92400E">合作博弈论：</tspan>刻画宏观全局重要性与对称无向协同/对抗</text>
+    <text x="450" y="546" class="font-node-body">• <tspan font-weight="bold" fill="#1E40AF">Pearl SCM：</tspan>揭示微观有向传导机理 (独立微表情 vs 语义重构)</text>
+    <text x="450" y="566" class="font-node-body">• <tspan font-weight="bold" fill="#15803D">闭环互证：</tspan>宏观高对抗 (CMCI 高) 对应微观高直接直通 (NDE 大)</text>
+    <text x="450" y="586" class="font-node-body">• 典型案例：S02 反讽测得 Φ_TV = -0.521 且 NDE 贡献 74.5%</text>
+    <text x="450" y="606" class="font-node-body" font-size="11.5px" fill="#78350F" font-weight="bold">• 结论：双轨架构实现了全局客观归因与细粒度因果机制统一</text>
+    <text x="450" y="626" class="font-node-body" font-size="11.5px" fill="#15803D">✓ 兼具宏观博弈贡献归属与微观神经机理透明性</text>
+  </g>
+
+  <!-- Bottom Connector Curves to Synthesis Banner -->
+  <path d="M 212 652 C 212 665, 300 666, 330 670" stroke="#1D4ED8" stroke-width="1.4" fill="none"/>
+  <path d="M 627 652 C 627 665, 540 666, 510 670" stroke="#D97706" stroke-width="1.4" fill="none"/>
+
+  <!-- Bottom Synthesis Banner -->
+  <rect x="180" y="664" width="480" height="30" rx="15" fill="#0F172A" stroke="#000000" stroke-width="1.2"/>
+  <text x="420" y="684" text-anchor="middle" class="font-panel-pill" font-size="13.5px">宏观博弈响应曲面与微观因果中介路径在潜空间流形达成自洽互证</text>
+
+</svg>
