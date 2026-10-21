@@ -5,14 +5,14 @@
 ![Platform](<https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux%20%7C%20Overleaf-lightgrey.svg>)
 ![Contest](<https://img.shields.io/badge/Contest-CPGMPC%202026-red.svg>)
 
-啾咪！
+<font size="5”><b>啾咪！</b></font>
 
 本项目是针对 2026年第二十三届“华为杯”中国研究生数学建模竞赛专门定制的 LaTeX 论文排版模版。
 
 模版严格（并非严格，只是看上去还行）基于官方 Word 模板文件《附件3：“华为杯”第二十三届中国研究生数学建模竞赛论文模板.doc》及其 PDF 导出件的技术规范与排版要求逆向制作，并在湖州师范大学论文模版（`Huzhou_University_LaTex`）工程化架构的基础上重构而成，具备**零配置跨平台字体渲染**、**官方高保真封面与摘要**、**大论文原生三线表环境（hznuthreelinetable）** 等核心特性。
 
 > [!CAUTION]
-$\color{red}{\text{一定不要忘记修改参赛对号和队员姓名，还有更重要的是“`figures/cover_logos.png`”里面的主办大学的校徽一定要按照当年的模版改！！！！！！！！！！}}$
+一定不要忘记修改参赛对号和队员姓名，还有更重要的是“`figures/cover_logos.png`”里面的主办大学的校徽一定要按照当年的模版改！！！！！！！！！！
 
 ---
 
