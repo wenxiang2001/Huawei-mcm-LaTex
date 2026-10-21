@@ -5,7 +5,7 @@
 ![Platform](<https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux%20%7C%20Overleaf-lightgrey.svg>)
 ![Contest](<https://img.shields.io/badge/Contest-CPGMPC%202026-red.svg>)
 
-<font size="5”><b>啾咪！</b></font>
+啾咪！
 
 本项目是针对 2026年第二十三届“华为杯”中国研究生数学建模竞赛专门定制的 LaTeX 论文排版模版。
 
